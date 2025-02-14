@@ -1,0 +1,18 @@
+{% if recipe_list %}
+    <ul>
+    {% for recp in recipe_list %}
+      <li>
+        {% comment %} <a href="/recipe_list/{{ recp.id }}/"> {% endcomment %}
+          {{ recp.recipe_name }} <br>
+          {{ recp.ingredients }} <br>
+          Vegetarian : {{ recp.is_vegetarian }} <br>
+          {{ recp.recipe_name }} <br>
+          {{ recp.photo_path }} <br>
+          <img src="{{ recp.photo_path }}" alt="{{ recp.recipe_name }}" width="200">
+        </a>
+      </li>    
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No recipes are available.</p>
+{% endif %}
