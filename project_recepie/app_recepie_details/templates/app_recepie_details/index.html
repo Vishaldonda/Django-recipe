@@ -1,18 +1,33 @@
-{% if recipe_list %}
-    <ul>
-    {% for recp in recipe_list %}
-      <li>
-        {% comment %} <a href="/recipe_list/{{ recp.id }}/"> {% endcomment %}
-          {{ recp.recipe_name }} <br>
-          {{ recp.ingredients }} <br>
-          Vegetarian : {{ recp.is_vegetarian }} <br>
-          {{ recp.recipe_name }} <br>
-          {{ recp.photo_path }} <br>
-          <img src="{{ recp.photo_path }}" alt="{{ recp.recipe_name }}" width="200">
-        </a>
-      </li>    
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No recipes are available.</p>
-{% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>French Recipes</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+
+<div class="container">
+    {% if recipe_list %}
+        {% for recp in recipe_list %}
+            <div class="recipe-card">
+                <h3>{{ recp.recipe_name }}</h3>
+                <p>{{ recp.ingredients }}</p>
+                <p>Vegetarian: {{ recp.is_vegetarian }}</p>
+                {% comment %} <p> {{recp.photo_path}} </p> {% endcomment %}
+                {% if recp.photo_path %}
+                  <img src="{% static 'images/image' %}{{ forloop.counter }}.webp" alt="{{ recp.recipe_name }}">
+                  {% comment %} <img src="{% static 'images/recepie.jpeg' %}" alt="{{ recp.recipe_name }}"> {% endcomment %}
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No recipes are available.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
