@@ -15,7 +15,7 @@
                 <h3>{{ recp.recipe_name }}</h3>
                 <p>{{ recp.ingredients }}</p>
                 <p>Vegetarian: {{ recp.is_vegetarian }}</p>
-                {% comment %} <p> {{recp.photo_path}} </p> {% endcomment %}
+                {% comment %} <p> {{re.photo_path}} </p> {% endcomment %}
                 {% if recp.photo_path %}
                   <img src="{% static 'images/image' %}{{ forloop.counter }}.webp" alt="{{ recp.recipe_name }}">
                   {% comment %} <img src="{% static 'images/recepie.jpeg' %}" alt="{{ recp.recipe_name }}"> {% endcomment %}
