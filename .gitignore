@@ -20,3 +20,7 @@ test.py
 # Ignore logs
 *.log
 logs/
+
+#Ignore migrations
+*/migrations/
+!**/migrations/__init__.py

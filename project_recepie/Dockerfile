@@ -1,5 +1,5 @@
 # Use the official Python runtime image
-FROM python:3.13  
+FROM python:3.13-alpine
  
 # Create the app directory
 RUN mkdir /app
@@ -26,7 +26,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
  
 # Expose the Django port
-EXPOSE 8000
+# EXPOSE 8000
  
 # Run Django’s development server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

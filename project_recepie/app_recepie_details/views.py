@@ -7,6 +7,7 @@ def home(request):
     # return HttpResponse("Hello, Django!")
     
     recipe_list = Recipe.objects.all()   
+    print(recipe_list)
     output = ", ".join(recp.recipe_name for recp in recipe_list)
     print(output)
     

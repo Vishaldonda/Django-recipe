@@ -1,7 +1,9 @@
 # Django-recipe
 
-1. Build the image : `docker build -t my-recipe-app .`
+1. Run the Docker Compose : docker compose up --build
 
-2. Run the Container :  `docker run -p 8000:8000 my-recipe-app`
+2. Creates two containers:
+    - 1. django_web : For launching Django Server
+    - 2. postgres_db2 : For Postgres Server
 
-3. Access the server : `http://0.0.0.0:8000/`
+3. Access the Django server at : `http://0.0.0.0:8000/`
